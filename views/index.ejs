@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="main-header">
+        <div class="logo-container">
+          <img class="logo" src="/images/logo.png" alt="logo" width="100px" />
+        </div>
+        <div class="main-title-container">
+          <h1>NODEPOP!</h1>
+        </div>
+        <div class="lenguages-container">
+          <% getLocales().forEach(locale => { %>
+          <a
+            href="/change-locale/<%= locale %>"
+            style="
+              color: white;
+              text-decoration: none;
+              text-transform: uppercase;
+            "
+            ><%= locale %></a
+          >&nbsp; <% }) %>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main body -->
+    <main>
+      <div class="main-banner">
+        <div class="welcome">
+          <h2><%= __('Te damos la bienvenida a')%> <%= title %></h2>
+          <h2><%= __('tu portal de compra y venta de confianza!')%></h2>
+        </div>
+      </div>
+
+      <!-- Search form -->
+      <div class="search-container">
+        <div class="search-title">
+          <h2><%= __('Busca un anuncio')%></h2>
+        </div>
+        <div class="search-form">
+          <form action="/" method="get">
+            <label for="name"><%= __('Buscar anuncio por nombre')%></label>
+            <input type="text" name="name" id="name" />
+            <label for="name"><%= __('Buscar anuncio por precio')%></label>
+            <input type="text" name="price" id="price" />
+            <div class="info-prices-container">
+              <p class="info-prices">
+                10-50: Buscará anuncios con un precio entre que 10€ y 50€
+              </p>
+              <p class="info-prices">
+                10-: <%= __('Buscará anuncios con un precio mayor que 10€')%>
+              </p>
+              <p class="info-prices">
+                -10: <%= __('Buscará anuncios con un precio menor que 10€')%>
+              </p>
+              <p class="info-prices">
+                10: <%= __('Buscará anuncios con un precio exacto de 10€')%>
+              </p>
+            </div>
+            <label for="tag"><%= __('Buscar anuncio por tag')%></label>
+            <select name="tag" id="tag">
+              <option value="">Todos los tags</option>
+              <option value="work">work</option>
+              <option value="lifestyle">lifestyle</option>
+              <option value="motor">motor</option>
+              <option value="mobile">mobile</option>
+            </select>
+            <label for="sort">Ordenar por:</label>
+            <select name="sort" id="sort">
+              <option value="name">Nombre</option>
+              <option value="price">Precio</option>
+            </select>
+            <label for="limit">Límite de anuncios</label>
+            <input type="number" name="limit" id="limit" />
+            <label class="sale-label" for="sale">En venta</label>
+            <input
+              data-val="true"
+              value="true"
+              type="checkbox"
+              name="sale"
+              id="sale"
+            />
+            <button class="search-button" type="submit">
+              <%= __('Buscar anuncio')%>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Results box -->
+      <div class="results-main-container">
+        <div class="resultados-title">
+          <h3><%= __('Anuncios') %></h3>
+        </div>
+        <div class="resultados-group">
+          <% resultados.forEach(post=> {%>
+          <!-- Individual result box -->
+          <div class="individual-box-container">
+            <h5 class="sale-title">
+              <% if(post.sale==true) {%> Se vende <%} else {%> Se busca <%}%>
+            </h5>
+            <h5 class="name-title"><%=post.name %></h5>
+            <h5 class="price-title"><%=post.price %>€</h5>
+            <div class="img-container">
+              <img
+                class="img-post"
+                src="images/posts/<%=post.photo %>"
+                alt=""
+              />
+            </div>
+            <h5 class="tags-title">Tags: <%=post.tags %></h5>
+          </div>
+          <%});%>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="main-footer">
+        <div class="logo-container">
+          <img class="logo" src="/images/logo.png" alt="logo" width="100px" />
+        </div>
+        <div class="main-title-container">
+          <h1>NODEPOP</h1>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "Hola": "Hello",
+  "Welcome to the jungle": "Welcome to the jungle",
+  "respond with a resource": "respond with a resource",
+  "Te damos la bienvenida a": "Welcome to",
+  "tu portal de compra y venta de confianza!": "your trusted buying and selling portal!",
+  "Busca un anuncio": "Search for an ad",
+  "Buscar anuncio por nombre": "Search by name",
+  "Buscar anuncio por precio": "Search by price",
+  "Buscará anuncios con un precio mayor que 10€": "You will search for ads with a price greater than € 10",
+  "Buscará anuncios con un precio menor que 10€": "You will search for ads with a price less than € 10",
+  "Buscará anuncios con un precio exacto de 10€": "You will search for ads with an exact price of € 10",
+  "Buscar anuncio por tag": "Search by tag",
+  "Buscar anuncio": "Search",
+  "Anuncios": "Ads"
+}

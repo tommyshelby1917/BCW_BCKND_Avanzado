@@ -1,0 +1,121 @@
+body {
+  padding: 50px;
+  font: 14px "Montserrat", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+header, footer {
+  background-color: #00285a;
+}
+
+body {
+  background-color: #f7f7f6;
+}
+
+.main-header, .main-footer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.main-header h1, .main-footer h1 {
+  color: #fff;
+}
+
+.main-banner {
+  align-items: center;
+  background-color: #ffbb00;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.main-banner h2 {
+  text-align: center;
+  font-weight: 200;
+}
+
+.search-container {
+  background-color: #ffe7a5;
+  padding: 2rem 2rem;
+}
+
+.search-form {
+  border: #000000 solid 1px;
+  padding: 10px;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.search-form button {
+  display: block;
+  margin-top: 30px;
+}
+
+.info-prices {
+  color: rgb(124, 124, 124);
+}
+
+.results-main-container {
+  background-color: #fff6de;
+  padding: 2rem;
+}
+
+.resultados-group {
+  display: flex;
+}
+
+.individual-box-container {
+  align-items: center;
+  background-color: #eee;
+  border: #000000 solid 1px;
+  display: flex;
+  justify-content: center;
+  margin: 10px 10px 10px 0px;
+  padding: 10px;
+  width: 200px;
+  flex-direction: column;
+}
+
+
+.sale-title {
+  background-color: #00285a;
+  color: #ffbb00;
+  padding: 10px;
+  margin: 0;
+}
+
+.name-title {
+  font-weight: 200;
+  font-size: 20px;
+  margin: .8rem;
+}
+
+.price-title {
+  font-weight: 200;
+  font-size: 15px;
+  margin: 0;
+}
+
+.img-post {
+  width: 100%;
+  max-height: 100px;
+  object-fit: contain;
+  margin: .5rem 0rem;
+}
+
+.tags-title {
+  background-color: #ffbb00;
+  color: #00285a;
+  padding: .5rem;
+}

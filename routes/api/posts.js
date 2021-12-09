@@ -11,6 +11,8 @@ const getters = require('../../helpers/getters.js');
 
 const uploadMiddleware = require('../../lib/upload.js');
 
+const ThumbnailController = require('../../controllers/thumbnailController');
+
 // Get posts
 router.get('/', async (req, res, next) => {
   try {
@@ -53,7 +55,7 @@ router.post('/', uploadMiddleware.single('photo'), async (req, res, next) => {
       sale: req.body.sale,
       price: req.body.price,
       photo: {
-        location: `./uploads/${req.file.filename}`,
+        location: `/uploads/${req.file.filename}`,
         contentType: 'image/png',
       },
       tags: req.body.tags,
@@ -72,6 +74,11 @@ router.post('/', uploadMiddleware.single('photo'), async (req, res, next) => {
     // });
 
     const createdPost = await post.save();
+
+    // EJECUTAR EL THUMBAIL
+    const thumbnailController = new ThumbnailController();
+    let location = postData.photo.location;
+    thumbnailController.exec(location);
 
     res.status(201).json({ result: createdPost });
   } catch (err) {

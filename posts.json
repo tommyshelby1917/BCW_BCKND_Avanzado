@@ -4,30 +4,34 @@
       "name": "Bicicleta",
       "sale": true,
       "price": 230.15,
-      "photo": "bici.jpeg",
-      "tags": [
-        "lifestyle",
-        "motor"
-      ]
+      "photo": {
+        "location": "/public/images/posts/iphone.jpeg",
+        "filename": "bici.jpeg",
+        "contentType": "image/png"
+      },
+      "tags": ["lifestyle", "motor"]
     },
     {
       "name": "iPhone 3GS",
       "sale": false,
       "price": 50,
-      "photo": "iphone.jpeg",
-      "tags": [
-        "lifestyle",
-        "mobile"
-      ]
+      "photo": {
+        "location": "/public/images/posts/iphone.jpeg",
+        "filename": "iphone.jpeg",
+        "contentType": "image/png"
+      },
+      "tags": ["lifestyle", "mobile"]
     },
     {
       "name": "Seat Ibiza",
       "sale": true,
       "price": 6000,
-      "photo": "coche.jpeg",
-      "tags": [
-        "motor"
-      ]
+      "photo": {
+        "location": "/public/images/posts/coche.jpeg",
+        "filename": "coche.jpeg",
+        "contentType": "image/png"
+      },
+      "tags": ["motor"]
     }
   ]
 }

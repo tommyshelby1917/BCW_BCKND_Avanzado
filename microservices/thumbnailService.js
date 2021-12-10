@@ -7,7 +7,7 @@ const responder = new Responder({ name: 'create-thumbnail-controller' });
 
 const root = __dirname
   .split('/')
-  .filter((el) => el !== 'microservices')
+  .filter((e) => e !== 'microservices')
   .join('/');
 
 const destinationFolder = root + '/public/thumbnails/';
@@ -17,8 +17,6 @@ responder.on('create-thumbnail', async (fileLocation, done) => {
 
   const max = fileLocation.fileLocation.split('/').length;
   const name = fileLocation.fileLocation.split('/')[max - 1];
-
-  console.log('este es el uno', destinationFolder);
 
   // Resize image with sharp
   try {

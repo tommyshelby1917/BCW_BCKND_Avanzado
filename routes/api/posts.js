@@ -55,23 +55,19 @@ router.post('/', uploadMiddleware.single('photo'), async (req, res, next) => {
       sale: req.body.sale,
       price: req.body.price,
       photo: {
-        location: `/uploads/${req.file.filename}`,
+        location: `/public/images/posts/${req.file.filename}`,
+        filename: `${req.file.filename}`,
         contentType: 'image/png',
       },
       tags: req.body.tags,
     };
 
-    console.log(postData);
-
-    // const postData = req.body;
-
     const post = new Post(postData);
 
     // the error function in app.js has been modified for this to work correctly
-
-    // post.tags.forEach((e) => {
-    //   utils.verifyTags(e, res);
-    // });
+    post.tags.forEach((e) => {
+      utils.verifyTags(e, res);
+    });
 
     const createdPost = await post.save();
 
@@ -82,6 +78,7 @@ router.post('/', uploadMiddleware.single('photo'), async (req, res, next) => {
 
     res.status(201).json({ result: createdPost });
   } catch (err) {
+    console.log(err);
     next(err);
   }
 });

@@ -4,7 +4,10 @@ const mongoose = require('mongoose');
 
 // Schema of the announcement
 const postSchema = mongoose.Schema({
-  name: String,
+  name: {
+    type: String,
+    index: true, // index of posts allows an optimizated search
+  },
   sale: Boolean,
   price: {
     type: Number,
@@ -12,6 +15,7 @@ const postSchema = mongoose.Schema({
   },
   photo: {
     location: String,
+    filename: String,
     contentType: String,
   },
   tags: [String], // Array of strings

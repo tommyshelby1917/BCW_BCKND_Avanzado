@@ -1,6 +1,6 @@
 # Josep Miquel Arenas Beltran - Keepcoding
-# Nodepop
-# Node.js / MongoDB / Express
+
+# Backend avanzado
 
 ## ¿Qué és Nodepop?
 
@@ -44,18 +44,28 @@ npm start
 
 - Tenemos dos manera de visualizar los resultados que nos devuelve nuestra API:
 
-  1) En el frontpage -> localhost:3000
-  2) En un JSON -> localhost:3000/api/posts
-  3) Podemos obtener la lista de tags en -> localhost:3000/api/posts/tags
+  1. En el frontpage -> localhost:3000
+  2. En un JSON -> localhost:3000/api/posts
+  3. Podemos obtener la lista de tags en -> localhost:3000/api/posts/tags
+
+## ¿la API está abierta a todo el mundo?
+
+- No, tienes que ser un usuario registrado. Para hacer peticiones a la API es necesario hacer un get a la ruta api/login con los siguientes campos:
+
+  - email (string)
+  - password (string)
+
+  Si las credenciales son correctas, nos devolvera un JWToken que hay que colocar en el header (Authentication). Eso permitira consumir nuestra API.
 
 ## ¿Cómo hago una consulta a la API de Nodepop?
 
 - Hay que pasarle uno o más parámetros configurados para la API, en la query a la URL. Por ejemplo:
 
-  1) En el frontpage -> localhost:3000/?price=50
-  2) En un JSON -> localhost:3000/api/posts?price=50
+  1. En el frontpage -> localhost:3000/?price=50
+  2. En un JSON -> localhost:3000/api/posts?price=50
 
 ## ¿Qué parametros acepta la API de Nodemon?
+
 - Podemos filtrar los anuncios por
   - Nombre: /api/posts?name=bicicleta
   - Tag: /api/posts?tag=motor
@@ -76,11 +86,16 @@ npm start
     - Muestra un numero máximo de anuncios. En este caso sólo mostraria 2 anuncios.
 
 ## ¿Cómo podemos publicar un anuncio?
-  - Podemos hacer un post a nuestra API, incluyendo en el cuerpo el siguiente esqueleto. Todos los campos son requeridos:
-    - name (String)
-    - sale (Boolean)
-    - price (Number)
-    - photo (String)
-    - tags (Array)
 
+- Podemos hacer un post a nuestra API, incluyendo en el cuerpo el siguiente esqueleto y en modo form-data. Todos los campos son requeridos:
+  - name (String)
+  - sale (Boolean)
+  - price (Number)
+  - photo (File)
+  - tags (Array)
 
+## Esta aplicacion tiene una dependencia que es un microservicio que se encarga de generar thumbnails.
+
+- La dependencia está situada en **microservices/thumbnailService**
+
+- Los thumbnails generados se guardaran en **public/thumbnails**

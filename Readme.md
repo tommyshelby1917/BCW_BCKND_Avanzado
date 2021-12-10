@@ -34,6 +34,11 @@ sudo mkdir -p /data/db
 npm start
 ```
 
+```sh
+cd microservices
+node thumbnailService.js
+```
+
 - Si todo ha ido bien veremos el siguiente mensaje en consola y entonces podremos empezar a usar la aplicación.
 
   ```sh

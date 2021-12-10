@@ -34,11 +34,6 @@ sudo mkdir -p /data/db
 npm start
 ```
 
-```sh
-cd microservices
-node thumbnailService.js
-```
-
 - Si todo ha ido bien veremos el siguiente mensaje en consola y entonces podremos empezar a usar la aplicación.
 
   ```sh
@@ -104,3 +99,10 @@ node thumbnailService.js
 - La dependencia está situada en **microservices/thumbnailService**
 
 - Los thumbnails generados se guardaran en **public/thumbnails**
+
+## ¿Qué tengo que hacer para arrancar el servicio?
+
+```sh
+cd microservices
+node thumbnailService.js
+```
